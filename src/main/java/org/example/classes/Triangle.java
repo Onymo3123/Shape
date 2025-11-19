@@ -6,7 +6,7 @@ import org.example.classes.exceptions.TirangleTypeException;
 public class Triangle extends Shape{
     TriangleType type;
     double height;
-    double width;
+    double width;//
 
     public Triangle(String title, TriangleType type, double height, double width){
         super(title);
