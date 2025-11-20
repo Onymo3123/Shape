@@ -1,5 +1,7 @@
 package org.example.classes;
 
+import java.awt.*;
+
 public class Rectangle extends Shape{
     double width;
     double length;
@@ -27,5 +29,11 @@ public class Rectangle extends Shape{
     @Override
     public Double Perimeter() {
         return 2 * (this.width + this.length);
+    }
+
+    @Override
+    public void paint(Graphics g) {
+        int[] position = this.GetRandomPosition();
+        g.drawRect(position[0], position[1], (int)this.width, (int)this.length);
     }
 }
