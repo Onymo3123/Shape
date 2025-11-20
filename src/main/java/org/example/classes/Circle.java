@@ -1,8 +1,10 @@
 package org.example.classes;
 
+import java.awt.*;
+
 public class Circle extends Shape{
 
-    Double radius;
+    double radius;
 
     public Circle(String title, double radius){
         super(title);
@@ -22,5 +24,12 @@ public class Circle extends Shape{
     @Override
     public Double Perimeter() {
         return 2.0 * radius * Math.PI;
+    }
+
+    @Override
+    public void paint(Graphics g) {
+        int[] position = this.GetRandomPosition();
+        g.drawOval(position[0], position[1], (int)this.radius, (int)this.radius);
+        System.out.println(123);
     }
 }

@@ -3,10 +3,12 @@ package org.example.classes;
 import org.example.classes.enums.TriangleType;
 import org.example.classes.exceptions.TirangleTypeException;
 
+import java.awt.*;
+
 public class Triangle extends Shape{
     TriangleType type;
     double height;
-    double width;
+    double width;//
 
     public Triangle(String title, TriangleType type, double height, double width){
         super(title);
@@ -35,5 +37,12 @@ public class Triangle extends Shape{
         }else{
             throw new TirangleTypeException("Невозможно вычислить периметр данного треугольника");
         }
+    }
+
+    @Override
+    public void paint(Graphics g) {
+        int[] position = this.GetRandomPosition();
+        g.drawOval(position[0], position[1], (int)this.width, (int)this.height);
+        g.drawRect(position[0], position[1], (int)this.width, (int)this.height);
     }
 }
